@@ -1,39 +1,29 @@
 @font-face {
   font-family: 'barlow';
-  src: url("./fonts/ChaletLondonNineteenSixty.ttf");
+  src: url('./fonts/ChaletLondonNineteenSixty.ttf');
 }
 
 * {
   font-family: inherit;
 }
 
-.no-grow {
-  flex-grow: 0;
-}
-
-em {
-  font-style: normal;
-}
-
 #app {
   font-family: 'barlow', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: white;
 }
 
 .chat-window {
+  --size: calc((((2.7vw / 1.77777) * 1.2)) * 6);
   position: absolute;
-  top: 1.5%;
-  left: 0.8%;
+  right: calc(1.56vw);
+  top: calc(1vw);
+  height: var(--size) !important;
   width: 25% !important;
-  height: 22%;
-  max-width: 1000px;
-  /* background: inherit !important; */
-  background-color: rgba(0, 0, 0, 0.35) !important;
-  -webkit-animation-duration: 2s;
-}
+  background: inherit !important;
+  background-color: rgba(27, 27, 27, 0.1) !important;
 
+  left: auto;
+  -webkit-animation-duration: 1.5s !important;
+}
 
 .chat-messages {
   position: relative;
@@ -45,16 +35,21 @@ em {
   overflow-y: hidden;
 }
 
-
 .chat-input {
+  --size: calc((((2.7vw / 1.77777) * 1.2)) * 6);
   font-family: 'barlow' sans-serif;
   font-size: 1.65vh;
-  position: absolute;
 
-  top: 23.8%;
-  left: 0.8%;
+  position: absolute;
+  right: calc(1.56vw);
+  top: calc(31% - (var(--size) / 2));
+  background: inherit !important;
+
+  bottom: auto;
+  left: auto;
+
+  height: auto;
   width: 25% !important;
-  max-width: 500px;
   box-sizing: border-box;
 }
 
@@ -72,7 +67,8 @@ textarea {
   padding: 1%;
   padding-left: 3.5%;
   color: white;
-  background-color: rgba(0, 0, 0, 0.6) !important;
+  background-color: rgba(27, 27, 27, 0.5) !important;
+
   width: 100%;
   border-width: 0;
   height: 3.15%;
@@ -80,10 +76,14 @@ textarea {
   text-overflow: ellipsis;
 }
 
-textarea:focus, input:focus {
-    outline: none;
+textarea:focus,
+input:focus {
+  outline: none;
 }
-
+.chat-input .prefix {
+  margin: 0;
+  margin-left: -0.7%;
+}
 .msg {
   font-family: 'barlow' sans-serif;
   margin-bottom: 0.28%;
@@ -102,7 +102,7 @@ textarea:focus, input:focus {
   font-size: 1.65vh;
   box-sizing: border-box;
   color: white;
-  background-color: rgba(0, 0, 0, 0.75) !important;
+  background-color: rgba(27, 27, 27, 0.5) !important;
   width: 100%;
 }
 
